@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="../assets/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body bgcolor="#FAFAFA">
+	
+	<div id="main-pane">
+		<div id="menu-6" class="main-pane-items"><a href="../index.html#main-contact-title">contact</a></div>
+		<div id="menu-5" class="main-pane-items"><a href="join.html">join</a></div>
+		<div id="menu-4" class="main-pane-items"><a href="team.html">team</a></div>
+		<div id="menu-3" class="main-pane-items"><a href="store.html">store</a></div>
+		<div id="menu-2" class="main-pane-items"><a href="event.html">events</a></div>
+		<div id="menu-1" class="main-pane-items"><a href="init.html">initiatives</a></div>
+		<div id="menu-0" class="main-pane-items"><a href="../index.html">home</a></div>	
+	</div>
+	
+	<div class="main-head" id="team-head">our <span style="color:#E65100">team</span></div>
+	<div class="team-title" id="team-title-board">Board members</div>
+	<div id="team-holder-board">
+		<div class="team-board-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Dr.Nandkumar Jadhav</div>
+		</div>
+
+		<div class="team-board-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Jyoti Francis Nadar</div>
+		</div>
+
+		<div class="team-board-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Sugandhi Francis</div>
+		</div>
+	</div>
+
+	<div id="team-title-adv">Advisory board</div>
+	<div id="team-holder-adv">
+		<div class="team-rest-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Dr.Vivek Monteiro</div>
+		</div>
+	</div>
+
+	<div id="team-title-hon">Honorary board</div>
+	<div id="team-holder-hon">
+		<div class="team-rest-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Dr.Jitendra Bhatia</div>
+		</div>
+		<div class="team-rest-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">Dr.T.Prasad</div>
+		</div>
+		<div class="team-rest-mem">
+			<div class="team-board-img"></div>
+			<div class="team-board-name">P.Tripathi</div>
+		</div>
+	</div>
+	<div id="team-title-lead">Lead Team</div>
+	<div id="team-holder-lead">
+		<div class="team-lead-name">Jyoti Francis Nadar</div>
+		<div class="team-lead-name">Dr.Nandkumar Jadhav</div>
+		<div class="team-lead-name">Soni Yadav</div>
+		<div class="team-lead-name">Sushma Raja</div>
+	</div>
+
+
+</body>
+<script type="text/javascript">
+	$('#main-menu').click(function(){
+		$('#main-pane').css('right','0vw');
+	})
+	$('#main-pane-close').click(function(){
+		$('#main-pane').css('right','-20vw');
+	})
+	$('.main-pane-items').click(function(){
+		$('#main-pane').css('right','-20vw');
+	})
+</script>
+</html>

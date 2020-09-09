@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<link media="screen and (min-device-width: 501px)" rel="stylesheet" type="text/css" href="assets/main.css">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="assets/mobile.css">
+	<link rel="shortcut icon" href="img/misc/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/misc/favicon.ico" type="image/x-icon">
+
+
+
+</head>
+<body>
+<div class="home-card " id="crd1">
+	<img class="icons-main" id="ico-1" src="img/ico/bio.png">
+	<div class="ico-name" id="ico-name-1">About</div>
+</div>
+<div class="home-card " id="crd2">
+	<img class="icons-main" id="ico-2" src="img/ico/movies.png">
+	<div class="ico-name" id="ico-name-2">Movies</div>
+</div>
+<div class="home-card " id="crd3">
+	<img class="icons-main" id="ico-3" src="img/ico/travel.png">
+	<div class="ico-name" id="ico-name-3">Travelling<br/>Cinema</div>
+</div>
+<div class="home-card " id="crd4">
+	<img class="icons-main" id="ico-4" src="img/ico/media.png">
+	<div class="ico-name" id="ico-name-4">Media Coverage</div>
+</div>
+<div class="home-card " id="crd5">
+	<img class="icons-main" id="ico-5" src="img/ico/work.png">
+	<div class="ico-name" id="ico-name-5">Workshop</div>
+</div>
+<div class="home-card " id="crd6">
+	<img class="icons-main ico-desk" id="ico-6" src="img/ico/merchandise.png">
+	<img class="icons-main ico-mob" id="ico-6" src="img/ico/merchandisem.png">
+	<div class="ico-name" id="ico-name-6">Merchandise</div>
+</div>
+<div class="home-card " id="crd7">
+	<img class="icons-main" id="ico-7" src="img/ico/new.png">
+	<div class="ico-name" id="ico-name-7">Announcements</div>
+</div>
+<div class="home-card " id="crd8">
+	<img class="icons-main ico-desk" id="ico-8" src="img/ico/gallery.png">
+	<img class="icons-main ico-mob" id="ico-8" src="img/ico/gallerym.png">
+	<div class="ico-name" id="ico-name-8">Gallery</div>
+</div>
+<div class="home-card " id="crd9">
+	<img class="icons-main" id="ico-9" src="img/ico/social.png">
+	<div class="ico-name" id="ico-name-9">Say hello!</div>
+</div>
+<div id="crd10">
+	
+	<img class="ico-desk sign" src="img/ico/signx.png">
+	<img class="ico-desk pen" src="img/ico/pen.png">
+	
+	<img class="ico-mob sign" src="img/ico/signxm.png">
+	<img class="ico-mob pen" src="img/ico/penm.png">
+
+</div>
+<div id="lander">
+	 <img id="lander-img" src="img/misc/lander.jpg">
+	 <div id="begin-btn">Enter</div>
+</div>
+</body>
+<script type="text/javascript">
+	
+
+	pages=['bio','movies','travel','media','workshop','merchandise','new','gallery','social'];
+
+	p=0;
+
+	if($(window).width()<=500) {
+		$('.ico-desk').hide();
+		p='-14vw';
+	}
+
+	else {
+		$('.ico-mob').hide();
+		p='-4vw';
+	}
+
+	
+	$( ".home-card" ).bind( "click", function() {
+		$('.sign').hide();
+		
+		_id=parseInt((this.id)[3]);
+
+		$(this).addClass('home-card-click');
+		
+		for(var i=0;i<9;i++)if(i!=_id-1)$( ".home-card" ).eq(i).css('transform','scale(0)');
+		
+		setTimeout(function(){
+		$(location).attr('href', 'pages/'+pages[_id-1]+'.html');              
+                  }, 1000);
+
+		setTimeout(function(_id){
+			$("#ico-"+_id).css('opacity','0');
+			$("#ico-name-"+_id).css('opacity','0');
+		},600,_id)
+
+		if(_id=='3')$("#ico-name-3").text('Travelling Cinema');
+
+		$("[id=ico-"+_id+"]").addClass('ico-click');
+		$("#ico-name-"+_id).addClass('ico-name-click')
+
+
+	});
+
+	$( "#begin-btn" ).bind( "click", function() {
+		$("#lander").fadeOut();	
+		if($(window).width()<=500)$(".sign").css('margin-left','-12vw');
+		main();
+	});
+
+	
+	function main(){
+
+	setTimeout(function(){		
+		$(".pen").css('margin-top',p);	
+	},1000);
+
+	setTimeout(function(){
+		$( ".home-card" ).css('transform','scale(1)');	
+	},10);
+	}
+	
+	
+
+</script>
+</html>

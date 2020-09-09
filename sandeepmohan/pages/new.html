@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<link media="screen and (min-device-width: 501px)" rel="stylesheet" type="text/css" href="../assets/main.css">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="../assets/mobile.css">
+	<link rel="shortcut icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	
+</head>
+<body class="no-flow" bgcolor="#81EFDA">
+<section id="main-content">
+
+
+<img src="../img/bck/new.jpg" class="bck-img">
+<a href="home.html"><img class="main-home" src="../img/misc/home.png"></a>
+
+	<img id="news-cal" src="../img/misc/cal.png">
+	<img id="news-rib" src="../img/misc/ribbon.png">
+	<div id="news-ground">
+		
+		<div id="nw8" class="news-item">
+			1 Oct 18<br/><br/>Post production work on my next film "Nirmal Anand Ki Puppy" has commenced. We are done with the shoot.
+		</div>
+
+		<div id="nw7" class="news-item">
+			5 Feb 18<br/><br/>#Shreelancer has two screenings at the prestigious Kala Ghoda Arts Festivals on 5th and 9th of Feb.
+		</div>
+
+		<div id="nw6" class="news-item">
+			21 Nov 17<br/><br/>Panellist in Film Bazaar Knowledge Series. Topic: Innovative Indie Film Distribution.
+		</div>
+
+		<div id="nw5" class="news-item">
+			1 Oct 17<br/><br/>Shreelancer in Chicago South Asian Film Festival.
+		</div>
+
+		<div id="nw4" class="news-item">
+			9 Sep 17<br/><br/>Shreelancer Theatrical release in New Jersey and Fremont.
+		</div>
+		  
+		<div id="nw3" class="news-item">
+			18 Aug 17<br/><br/>Shreelancer releases theatrically in India.
+		</div>
+
+		<div id="nw2" class="news-item">
+			5 Jun 17<br/><br/>The Great Indian Travelling Cinema screenings in Ahmedabad.
+		</div>
+		
+		<div id="nw1" class="news-item">
+			3 May 17<br/><br/>Shreelancer in New York Indian Film Festival.
+		</div>
+
+		<div class="news-nil"></div>
+		<div class="news-nil"></div>
+		<div class="news-nil"></div>
+		<div class="news-nil"></div>
+		<div class="news-nil"></div>
+		<div class="news-nil"></div>
+		
+	</div>
+
+	<div id="news-time">
+		<div id="nd1" class="news-date">Oct 18</div>
+		<div id="nd2" class="news-date">Feb 18</div>
+		<div id="nd3" class="news-date">Nov 17</div>
+		<div id="nd4" class="news-date">Oct 17</div>
+		<div id="nd5" class="news-date">Sep 17</div>
+		<div id="nd6" class="news-date">Aug 17</div>
+		<div id="nd7" class="news-date">Jun 17</div>
+		<div id="nd8" class="news-date">May 17</div>
+	</div>
+
+</section>
+<div class="loader">Loading...</div>
+
+</body>
+<script type="text/javascript">
+	
+	$(window).on('load', function() {
+		$('#main-content').fadeIn(1000);
+		$('.loader').fadeOut(200);
+	});		
+	
+	var d_map=[8,7,6,5,4,3,2,1];
+	
+	$(".news-date").bind( "click", function() {
+		
+		_id=parseInt((this.id)[2]);
+		$(".news-date").each(function(){
+			$(this).css('font-weight','normal');
+		})
+		$(".news-date").eq(_id-1).css('font-weight','bold');	
+
+		$("#news-ground").animate({
+        scrollTop:  $("#news-ground").scrollTop() - $("#news-ground").offset().top + $("#nw"+d_map[_id-1]).offset().top 
+	    }, 500); 
+
+	});
+
+</script>
+</html>

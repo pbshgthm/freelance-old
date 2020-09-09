@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mumbai Culture Map</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="Poobesh Gowtham SR">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<link rel="stylesheet" href="css/leaflet.css"/>
+	<script src="js/leaflet.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500|Tajawal" rel="stylesheet">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="css/style.small.css?v=2">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (min-device-width: 501px) and (max-device-width: 770px)" rel="stylesheet" type="text/css" href="css/style.medium.css?v=2">
+	<link media="screen and (min-device-width: 771px)" rel="stylesheet" type="text/css" href="css/style.large.css?v=2">
+	<link rel='shortcut icon' type='image/x-icon' href='assets/favicon.ico' />
+	
+	<meta property="og:url"                content="http://mumbaiculturemap.com" />
+	<meta property="og:type"               content="Website" />
+	<meta property="og:title"              content="Mumbai's Culture Map" />
+	<meta property="og:description"        content="Explore the city’s rich cultural landscape by checking out the various cultural spaces." />
+	<meta property="og:image"              content="http://mumbaiculturemap.com/assets/fb-preview.png" />
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56712575-2"></script>
+
+	<script>
+
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'UA-56712575-2');
+
+	</script>
+
+	
+</head>
+<body>
+
+
+<div id="intro">
+	<div id="intro-filter">
+		Welcome to the Mumbai Culture Map created by Godrej India Culture Lab. We invite you to explore the city’s rich cultural landscape by checking out the various cultural spaces.
+		<div id="open-btn-holder">
+			<div id="open-btn">Visit Map</div>
+		</div>
+	</div>
+</div>
+
+
+<a class="controls" href="http://indiaculturelab.org/" target="_blank"><img src="assets/logo.png" id="logo"></a>
+<img class="controls" id="home-view" src="assets/icons/home-view.png">
+<img class="controls" id="curr-loc" src="assets/icons/curr-loc.png">
+<img class="controls" id="zoom-in" src="assets/icons/zoom-in.png"></div>
+<img class="controls" id="zoom-out" src="assets/icons/zoom-out.png">
+<div id="info-box"></div>
+
+
+<div id="content">
+
+	<div id="nav-bar">
+		<div id="title">Mumbai Culture Map</div>
+		<img id="menu-btn" src="assets/icons/menu.png">
+		<input id="search-box" type="text" placeholder="Mumbai's Culture Map" oninput="search(this.value)">
+		<div id="cat-bar">
+			<div class="cat-btn" id="cat00">ALL</div>
+		</div>
+	</div>
+
+
+	<div id="mapArea"></div>
+	<div id="map-filter"></div>
+	<div id="menu-pane"></div>
+	<div id="search-complete"></div>
+
+</div>
+</body>
+
+<script type="text/javascript" src="js/dataz.json"></script>
+<script type="text/javascript" src="js/main.js?v=2"></script>
+
+</html>

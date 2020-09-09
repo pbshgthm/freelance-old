@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Sandeep</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<link media="screen and (min-device-width: 501px)" rel="stylesheet" type="text/css" href="../assets/main.css">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="../assets/mobile.css">
+	<link rel="shortcut icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../img/misc/favicon.ico" type="image/x-icon">
+
+</head>
+<body class="no-flow-bio" bgcolor="#FFE082">
+<section id="main-content">
+
+<a href="home.html"><img class="main-home" src="../img/misc/home.png"></a>
+<section class="ab-pg" id="ab1">
+	<div id="ab-qt-1" class="ab-qt">My heart tells a story. </div>
+	<div id="ab-nm-1" class="ab-nm">Sandeep Mohan</div>
+	<div id="ab-rl-1" class="ab-rl">filmmaker&nbsp; . &nbsp;writer&nbsp; . &nbsp;traveller</div>
+	<img src="../img/bio/1.png" id="bio-pic1">
+</section>
+<section class="ab-pg" id="ab2">
+	<div class="ab-qt ab-qt-2">I make films only so that I can express what I cannot otherwise. </div>
+	<div class="ab-ds ab-ds-2">I never like over-analysing a film or music or any piece of art. If I "feel" for it in my heart, then it's good. If it doesn't make me feel, then it doesn't work for me. Simple. I try to make my films too keeping this philosophy in mind.</div>
+	<a class="no-deco" href="movies.html"><div id="chk-mv">Check out Movies</div></a>
+	<img src="../img/bio/2.png" id="bio-pic2">
+</section>
+
+<section class="ab-pg" id="ab3">
+	<div id="ab-qt-3" class="ab-qt">I love Cinema. I love Travel.<br/> So I came up with "The Great Indian Travelling Cinema"</div>
+	<div id="ab-ds-3" class="ab-ds">It's an experiment. I carry a Projector and screen my films in alternative spaces like Cafes, Pubs, Art Galleries, Colleges, Offices etc. These private screenings allow me to get a first hand feel of how the film is connecting with the audience.</div>
+	<a class="no-deco" href="travel.html"><div id="chk-sc">Know more</div></a>
+	<img src="../img/bio/3.png" id="bio-pic3">
+</section>
+
+<section class="ab-pg" id="ab4">	
+	<div id="ab-qt-4"class="ab-qt ab-qt-2">It is a long journey and I am hoping eventually it will all add up as a good joke</div>
+	<div class="ab-ds ab-ds-4 ab-ds-2">I am not here to change the system. But I am here to tell my stories, express myself, and then one morning, die.</div>
+	<img src="../img/bio/4.png" id="bio-pic4">
+</section>
+
+<div id="nxt-ab"><img src="../img/misc/down.png" id="chevron-down"></i></div>
+
+<div class="marker-ab" id="abm1"></div>
+<div class="marker-ab" id="abm2"></div>
+<div class="marker-ab" id="abm3"></div>
+<div class="marker-ab" id="abm4"></div>
+
+</section>
+
+
+<div class="loader">Loading...</div>
+</body>
+<script>
+
+
+
+	$(window).on('load', function() {
+		$('#main-content').fadeIn(1000);
+		$('.loader').fadeOut(200);
+	});
+	
+
+var currAb=1;
+scLock=false;
+
+lastSc=0;
+dir=-1;
+
+//goTo(1);
+
+if($(window).width()>500){
+	$(document).scroll(function() {
+    sc=100*$(document).scrollTop()/$(window).height();
+    //console.log(sc);
+    
+    if(sc%100<9||sc%100>89)scLock=false;
+    
+    if(sc%100>10&&!scLock&&dir==0&&currAb<4){
+    	//goTo(Math.ceil(sc/100)+1);
+    	goTo(++currAb);
+    	scLock=true;
+    	dir=-1;
+    }
+    if(sc%100<90&&!scLock&&dir==1&&currAb>1){
+    	//goTo(Math.ceil(sc/100));
+    	goTo(--currAb);
+    	scLock=true;
+    	dir=-1;
+    }
+});		
+}
+
+
+
+	function goTo(ab){
+		$(".marker-ab").each(function(index){
+			$(this).css('box-shadow','0 0 0px 0px #F9A825');
+		});
+	
+		
+		$('html, body').animate({
+        	scrollTop: $('#ab'+ab).offset().top
+    	}, 500);
+
+    	$('.marker-ab').eq(ab-1).css('box-shadow','0 0 0px 5px #F9A825');
+    	dir=-1;
+	}
+
+	$("#nxt-ab").bind( "click", function() {
+		if(currAb==4)currAb=0;
+		goTo(++currAb);	
+
+	});
+
+	$(".marker-ab").bind( "click", function() {
+		
+		_id=parseInt((this.id)[3]);
+		currAb=_id;
+		goTo(currAb);	
+
+	});
+
+
+// ADD MOZILLA SUPPORT
+
+$(document).bind('mousewheel', function(e){
+     
+     if(e.originalEvent.wheelDelta < -5) dir=0;
+   
+     else{
+
+     	if(e.originalEvent.wheelDelta > 5)dir=1;
+     	else dir=-1;
+     	
+     } 
+     
+  });
+
+
+</script>
+</html>

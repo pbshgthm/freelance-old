@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<link media="screen and (min-device-width: 501px)" rel="stylesheet" type="text/css" href="../assets/main.css">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="../assets/mobile.css">
+	<link rel="shortcut icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	
+</head>
+<body class="no-flow" bgcolor="#EFEF6C">
+<section id="main-content">
+<a href="home.html"><img class="main-home" src="../img/misc/home.png"></a>
+<div id="tr-player">
+	<iframe id="mv-frame" src="https://www.youtube.com/embed/YR_xi2CZ3kQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="mv-title">#Shreelancer</div>
+<div id="mv-desc">#Shreelancer is the story of a freelancer named Shree coping with artistic self doubts. #Shreelancer is the more personal of my 3 films till now. The film released theatrically in India in 2017.</div>
+
+<div id="movie-list">
+	<div id="mv0" class="movie-name">#Shreelancer</div>
+	<div id="mv1" class="movie-name">Hola Venky!</div>
+	<div id="mv2" class="movie-name">Love, Wrinkle-free</div>
+</div>
+<img  id="movie-bck" class="bck-img" src="../img/bck/film.jpg">
+</section>
+
+<div class="loader">Loading...</div>
+</body>
+<script type="text/javascript">
+	
+	$(window).on('load', function() {
+		$('#main-content').fadeIn(1000);
+		$('.loader').fadeOut(200);
+	});
+
+	var mv_t=["#Shreelancer","Hola Venky!", "Love, Wrinkle Free"];
+	var mv_ds=["#Shreelancer is the story of a freelancer named Shree coping with artistic self doubts. #Shreelancer is the more personal of my 3 films till now. The film released theatrically in India in 2017.","Hola Venky! is a comedy that follows the life of an Indian Techie as he travels from Mumbai to San Francisco.The Film was shot by a 3 member crew and has travelled to many an alternative space through The Great Indian Travelling Cinema.", "Love, Wrinkle-free is a relationship comedy about a dysfunctional Goan family. The film released theatrically in India in 2012 in more than 10 cities through PVR Director's Rare. "];
+	var mv_ln=["https://www.youtube.com/embed/YR_xi2CZ3kQ?rel=0&amp;showinfo=0","https://www.youtube.com/embed/NoQ8hHqBLig?rel=0&amp;showinfo=0","https://www.youtube.com/embed/8ojeGJObwJ8?rel=0&amp;showinfo=0"];
+
+	$( ".movie-name" ).bind( "click", function() {
+		
+		_id=parseInt((this.id)[2]);
+		for(var i=0;i<3;i++)$('#mv'+i).css('font-weight','normal');
+		$('#mv'+_id).css('font-weight','bold');
+		
+		$('#mv-title').css('opacity','0');
+		$('#mv-desc').css('opacity','0');
+		$('#mv-frame').attr('src',mv_ln[_id]);
+		setTimeout(function(){
+			$('#mv-title').css('opacity','1').text(mv_t[_id]);	
+			$('#mv-desc').css('opacity','1').text(mv_ds[_id]);
+	
+		},200);
+		
+	});
+
+</script>
+
+
+</html>

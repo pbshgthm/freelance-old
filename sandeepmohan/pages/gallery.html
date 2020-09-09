@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gallery</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+	<link media="screen and (min-device-width: 501px)" rel="stylesheet" type="text/css" href="../assets/main.css">
+	<link content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="screen and (max-device-width: 500px)" rel="stylesheet" type="text/css" href="../assets/mobile.css">
+	<link rel="shortcut icon" href="../img/misc/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../img/misc/favicon.ico" type="image/x-icon">
+
+	
+</head>
+<body id="gal-mob"  bgcolor="#C4F487">
+<a href="home.html"><img class="main-home" src="../img/misc/home.png"></a>
+<div id="photo-ground">
+
+</div>
+<div class="loader">Loading...</div>
+
+</body>
+
+<script type="text/javascript">
+
+	for(var i=1;i<38;i++)
+		$('#photo-ground').append('<div class="photo-holder">\
+		<img class="photo" src="../img/gallery/'+i+'.jpg">\
+	</div>')
+
+	$(window).on('load', function() {
+		$('#photo-ground').css('opacity','1');
+		$('.loader').fadeOut(200);
+	});
+
+</script>
+</html>
